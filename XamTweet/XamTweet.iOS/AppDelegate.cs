@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿
 using Foundation;
 using UIKit;
 
@@ -23,7 +20,7 @@ namespace XamTweet.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            LoadApplication(new Forms.App());
 
             return base.FinishedLaunching(app, options);
         }
