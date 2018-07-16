@@ -8,4 +8,10 @@
     <PackageReference Include="TweetinviAPI" Version="3.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\..\..\Users\dario\.nuget\packages\system.reactive.core\3.1.1\lib\netstandard1.3\System.Reactive.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
