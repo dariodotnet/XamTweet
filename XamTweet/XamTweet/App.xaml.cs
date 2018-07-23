@@ -10,7 +10,7 @@ namespace XamTweet.Forms
         {
             InitializeComponent();
             var bootstrap = new AppBootstrap();
-            MainPage = bootstrap.MainView();
+            bootstrap.MainView();
         }
 
         protected override void OnStart()
