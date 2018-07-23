@@ -12,7 +12,5 @@ namespace XamTweet.ViewModel
         {
             ErrorInteraction = new Interaction<Exception, Unit>();
         }
-
-
     }
 }
