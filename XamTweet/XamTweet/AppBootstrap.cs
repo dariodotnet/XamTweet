@@ -1,9 +1,9 @@
 ﻿using ReactiveUI;
 using Splat;
-using Xamarin.Forms;
 using XamTweet.Contracts;
 using XamTweet.Forms.Services;
 using XamTweet.Forms.Views;
+using XamTweet.Services;
 using XamTweet.ViewModel;
 
 namespace XamTweet.Forms
@@ -19,6 +19,7 @@ namespace XamTweet.Forms
         private void InitServices()
         {
             Locator.CurrentMutable.RegisterLazySingleton(() => new NavigationService(), typeof(INavigationService));
+            Locator.CurrentMutable.RegisterLazySingleton(() => new TwitterService(), typeof(ITwitterService));
         }
 
         private void InitViews()
@@ -26,9 +27,11 @@ namespace XamTweet.Forms
             Locator.CurrentMutable.Register(() => new MainView(), typeof(IViewFor<MainViewModel>));
         }
 
-        public Page MainView()
+        public void MainView()
         {
-            return new MainView();
+            var _navigator = Locator.Current.GetService<INavigationService>();
+
+            _navigator.LoadMainView<MainViewModel>();
         }
     }
 }
