@@ -11,4 +11,8 @@
     <PackageReference Include="TweetinviAPI" Version="3.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\XamTweet.Contracts\XamTweet.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>
