@@ -11,8 +11,7 @@ namespace XamTweet.Services
     {
         public IObservable<Unit> Login()
         {
-            Auth.SetUserCredentials("UVht5bIEPfPy92X4NhSPyoUUh", "cWsJJ3jdXOJJfiCW7JnqnSvxcC00o5DmwoV1szKn8jMoFWAEI0",
-                "184009490-e7veAUSvHbRIQ4xo52TGSBMRabSi1iq5ziiue4ZE", "x1YKaW6BLWhGQdwONee8HihbHaPgIJ4q1aRjEHj454At7");
+            Auth.SetUserCredentials("CONSUMER_KEY", "CONSUMER_SECRET", "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET");
             return Observable.Return(Unit.Default);
         }
 
