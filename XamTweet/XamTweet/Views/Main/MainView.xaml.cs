@@ -1,8 +1,10 @@
-﻿using System.Reactive;
-using ReactiveUI;
+﻿using ReactiveUI;
+using System.Linq;
+using System.Reactive;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using Xamarin.Forms.Xaml;
+using XamTweet.ViewModel;
 
 namespace XamTweet.Forms.Views
 {
@@ -15,13 +17,16 @@ namespace XamTweet.Forms.Views
 
             this.WhenActivated(disposables =>
             {
-                this.WhenAnyValue(v => v.ViewModel.LoadCommand).Where(x => x != null)
+                this.WhenAnyValue(v => v.ViewModel.LoginCommand).Where(x => x != null)
                     .Select(x => Unit.Default)
-                    .InvokeCommand(ViewModel.LoadCommand)
+                    .InvokeCommand(ViewModel.LoginCommand)
                     .DisposeWith(disposables);
 
-                this.Bind(ViewModel, vm => vm.TweetText, v => v.TweetText.Text).DisposeWith(disposables);
-                this.BindCommand(ViewModel, vm => vm.PublisCommand, v => v.TweetPublish);
+                //this.Bind(ViewModel, vm => vm.TweetText, v => v.TweetText.Text).DisposeWith(disposables);
+                //this.BindCommand(ViewModel, vm => vm.PublisCommand, v => v.TweetPublish);
+
+                this.OneWayBind(ViewModel, vm => vm.Timeline, v => v.Timeline.ItemsSource,
+                    arg => arg.ToList().Select(x => new TweetViewModel { Tweet = x })).DisposeWith(disposables);
             });
         }
     }
