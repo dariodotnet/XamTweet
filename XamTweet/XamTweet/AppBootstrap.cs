@@ -25,13 +25,18 @@ namespace XamTweet.Forms
         private void InitViews()
         {
             Locator.CurrentMutable.Register(() => new MainView(), typeof(IViewFor<MainViewModel>));
+            Locator.CurrentMutable.Register(() => new MenuView(), typeof(IViewFor<MenuViewModel>));
+            Locator.CurrentMutable.Register(() => new TimeLineView(), typeof(IViewFor<TimeLineViewModel>));
+            Locator.CurrentMutable.Register(() => new SearchView(), typeof(IViewFor<SearchViewModel>));
+            Locator.CurrentMutable.Register(() => new NotificationsView(), typeof(IViewFor<NotificationsViewModel>));
+            Locator.CurrentMutable.Register(() => new MessagesView(), typeof(IViewFor<MessagesViewModel>));
         }
 
         public void MainView()
         {
             var _navigator = Locator.Current.GetService<INavigationService>();
 
-            _navigator.LoadMainView<MainViewModel>();
+            _navigator.LoadMainView();
         }
     }
 }
