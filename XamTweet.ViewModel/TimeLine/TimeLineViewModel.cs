@@ -1,7 +1,7 @@
-﻿namespace XamTweet.ViewModel.TimeLine
+﻿namespace XamTweet.ViewModel
 {
-    public class TimeLineViewModel
+    public class TimeLineViewModel : NavigationViewModel
     {
-        public string Hello => "Bienvenido a un nuevo capitulo de Dario presenta, Diversion con banderas";
+
     }
 }
