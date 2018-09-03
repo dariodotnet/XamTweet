@@ -17,13 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{E0F84E66-B227-4A29-A081-479E0BAEEB76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamTweet.ViewModel", "XamTweet.ViewModel\XamTweet.ViewModel.csproj", "{D13AA7F8-C2FD-4292-A513-BEB970BC5F4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamTweet.ViewModel", "XamTweet.ViewModel\XamTweet.ViewModel.csproj", "{D13AA7F8-C2FD-4292-A513-BEB970BC5F4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamTweet.Services", "XamTweet.Services\XamTweet.Services.csproj", "{7094A350-7573-4962-BC9D-65D6E19051CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamTweet.Services", "XamTweet.Services\XamTweet.Services.csproj", "{7094A350-7573-4962-BC9D-65D6E19051CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamTweet.Contracts", "XamTweet.Contracts\XamTweet.Contracts.csproj", "{BACFF827-4FFD-4F3C-9A3A-EC763960D9E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamTweet.Contracts", "XamTweet.Contracts\XamTweet.Contracts.csproj", "{BACFF827-4FFD-4F3C-9A3A-EC763960D9E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamTweet.UseCases", "XamTweet.UseCases\XamTweet.UseCases.csproj", "{E8512D49-ED93-416F-9BAD-4224DF9F1B15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamTweet.UseCases", "XamTweet.UseCases\XamTweet.UseCases.csproj", "{E8512D49-ED93-416F-9BAD-4224DF9F1B15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,8 +105,6 @@ Global
 		{43BF6C49-A43E-472B-905B-900E0E997EDE}.Debug|x64.Build.0 = Debug|Any CPU
 		{43BF6C49-A43E-472B-905B-900E0E997EDE}.Debug|x64.Deploy.0 = Debug|Any CPU
 		{43BF6C49-A43E-472B-905B-900E0E997EDE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{43BF6C49-A43E-472B-905B-900E0E997EDE}.Debug|x86.Build.0 = Debug|Any CPU
-		{43BF6C49-A43E-472B-905B-900E0E997EDE}.Debug|x86.Deploy.0 = Debug|Any CPU
 		{43BF6C49-A43E-472B-905B-900E0E997EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43BF6C49-A43E-472B-905B-900E0E997EDE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{43BF6C49-A43E-472B-905B-900E0E997EDE}.Release|Any CPU.Deploy.0 = Release|Any CPU
@@ -162,7 +160,6 @@ Global
 		{B8A156DE-E4D2-40E4-94FE-47F430FC054B}.AppStore|x86.Build.0 = AppStore|iPhone
 		{B8A156DE-E4D2-40E4-94FE-47F430FC054B}.AppStore|x86.Deploy.0 = AppStore|iPhone
 		{B8A156DE-E4D2-40E4-94FE-47F430FC054B}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
-		{B8A156DE-E4D2-40E4-94FE-47F430FC054B}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
 		{B8A156DE-E4D2-40E4-94FE-47F430FC054B}.Debug|Any CPU.Deploy.0 = Debug|iPhoneSimulator
 		{B8A156DE-E4D2-40E4-94FE-47F430FC054B}.Debug|ARM.ActiveCfg = Debug|iPhone
 		{B8A156DE-E4D2-40E4-94FE-47F430FC054B}.Debug|ARM.Build.0 = Debug|iPhone
@@ -177,7 +174,6 @@ Global
 		{B8A156DE-E4D2-40E4-94FE-47F430FC054B}.Debug|x64.Build.0 = Debug|iPhone
 		{B8A156DE-E4D2-40E4-94FE-47F430FC054B}.Debug|x64.Deploy.0 = Debug|iPhone
 		{B8A156DE-E4D2-40E4-94FE-47F430FC054B}.Debug|x86.ActiveCfg = Debug|iPhone
-		{B8A156DE-E4D2-40E4-94FE-47F430FC054B}.Debug|x86.Build.0 = Debug|iPhone
 		{B8A156DE-E4D2-40E4-94FE-47F430FC054B}.Debug|x86.Deploy.0 = Debug|iPhone
 		{B8A156DE-E4D2-40E4-94FE-47F430FC054B}.Release|Any CPU.ActiveCfg = Release|iPhone
 		{B8A156DE-E4D2-40E4-94FE-47F430FC054B}.Release|Any CPU.Build.0 = Release|iPhone
@@ -234,8 +230,6 @@ Global
 		{854A96F9-1581-4DE1-B540-7FBFDAA16950}.AppStore|x86.Build.0 = Release|x86
 		{854A96F9-1581-4DE1-B540-7FBFDAA16950}.AppStore|x86.Deploy.0 = Release|x86
 		{854A96F9-1581-4DE1-B540-7FBFDAA16950}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{854A96F9-1581-4DE1-B540-7FBFDAA16950}.Debug|Any CPU.Build.0 = Debug|x86
-		{854A96F9-1581-4DE1-B540-7FBFDAA16950}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{854A96F9-1581-4DE1-B540-7FBFDAA16950}.Debug|ARM.ActiveCfg = Debug|ARM
 		{854A96F9-1581-4DE1-B540-7FBFDAA16950}.Debug|ARM.Build.0 = Debug|ARM
 		{854A96F9-1581-4DE1-B540-7FBFDAA16950}.Debug|ARM.Deploy.0 = Debug|ARM
