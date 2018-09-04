@@ -2,6 +2,7 @@
 <rxui:ReactiveViewCell x:Class="XamTweet.Forms.Views.TweetCell"
                        xmlns="http://xamarin.com/schemas/2014/forms"
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:chachedImage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
                        xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
                        xmlns:vm="clr-namespace:XamTweet.ViewModel;assembly=XamTweet.ViewModel"
                        x:TypeArguments="vm:TweetViewModel">
@@ -10,10 +11,44 @@
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Image x:Name="TweetUserImage"
-               HeightRequest="40"
-               VerticalOptions="Start"
-               WidthRequest="40" />
-        <Label x:Name="MainText" Grid.Column="1" />
+        <chachedImage:CachedImage x:Name="TweetUserImage"
+                                  HeightRequest="60"
+                                  VerticalOptions="Start"
+                                  WidthRequest="60" />
+        <StackLayout Grid.Column="1">
+            <Label x:Name="MainText" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Reply"
+                        HorizontalOptions="Start"
+                        Text="C" />
+                <Button x:Name="Retweet"
+                        Grid.Column="1"
+                        HorizontalOptions="Start"
+                        Text="R" />
+                <StackLayout Grid.Column="2" Orientation="Horizontal">
+                    <chachedImage:CachedImage x:Name="Like"
+                                              HeightRequest="20"
+                                              HorizontalOptions="Start"
+                                              VerticalOptions="Center"
+                                              WidthRequest="20">
+                        <chachedImage:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapFavorite" />
+                        </chachedImage:CachedImage.GestureRecognizers>
+                    </chachedImage:CachedImage>
+                    <Label x:Name="FavoritesCount" VerticalTextAlignment="Center" />
+                </StackLayout>
+                <Button x:Name="Share"
+                        Grid.Column="3"
+                        HorizontalOptions="Start"
+                        Text="S" />
+            </Grid>
+        </StackLayout>
+
     </Grid>
 </rxui:ReactiveViewCell>
