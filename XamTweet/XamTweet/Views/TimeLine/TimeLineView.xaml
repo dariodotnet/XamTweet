@@ -2,12 +2,17 @@
 <xamForms:ReactiveContentPage x:Class="XamTweet.Forms.Views.TimeLineView"
                               xmlns="http://xamarin.com/schemas/2014/forms"
                               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                              xmlns:views="clr-namespace:XamTweet.Forms.Views;assembly=XamTweet.Forms"
                               xmlns:vm="clr-namespace:XamTweet.ViewModel;assembly=XamTweet.ViewModel"
                               xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
                               x:TypeArguments="vm:TimeLineViewModel">
-    <ContentPage.Content>
-        <StackLayout VerticalOptions="Center">
-            <Label HorizontalOptions="Center" Text="TimeLineView" />
-        </StackLayout>
-    </ContentPage.Content>
+    <ListView x:Name="Timeline"
+              CachingStrategy="RecycleElement"
+              HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <views:TweetCell />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </xamForms:ReactiveContentPage>
