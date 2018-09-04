@@ -10,7 +10,7 @@
                          x:TypeArguments="vm:MainViewModel">
     <NavigationPage Title="TimeLine" Icon="Menu">
         <x:Arguments>
-            <local:TimeLineView />
+            <local:TimeLineView x:Name="TimeLineView" />
         </x:Arguments>
     </NavigationPage>
     <NavigationPage Title="Busqueda" Icon="Menu">

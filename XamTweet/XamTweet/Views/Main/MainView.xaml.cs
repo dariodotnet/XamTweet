@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms.Xaml;
+﻿using ReactiveUI;
+using Xamarin.Forms.Xaml;
 
 namespace XamTweet.Forms.Views
 {
@@ -9,19 +10,10 @@ namespace XamTweet.Forms.Views
         {
             InitializeComponent();
 
-            //this.WhenActivated(disposables =>
-            //{
-            //    this.WhenAnyValue(v => v.ViewModel.LoginCommand).Where(x => x != null)
-            //        .Select(x => Unit.Default)
-            //        .InvokeCommand(ViewModel.LoginCommand)
-            //        .DisposeWith(disposables);
-
-            //    //this.Bind(ViewModel, vm => vm.TweetText, v => v.TweetText.Text).DisposeWith(disposables);
-            //    //this.BindCommand(ViewModel, vm => vm.PublisCommand, v => v.TweetPublish);
-
-            //    this.OneWayBind(ViewModel, vm => vm.Timeline, v => v.Timeline.ItemsSource,
-            //        arg => arg.ToList().Select(x => new TweetViewModel { Tweet = x })).DisposeWith(disposables);
-            //});
+            this.WhenActivated(disposables =>
+                {
+                    disposables(this.OneWayBind(ViewModel, vm => vm.TimeLine, v => v.TimeLineView.ViewModel));
+                });
         }
     }
 }
