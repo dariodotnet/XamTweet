@@ -15,6 +15,8 @@ namespace XamTweet.Droid
 
             base.OnCreate(bundle);
 
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
+
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new Forms.App());
         }
