@@ -15,6 +15,7 @@ namespace XamTweet.ViewModel
         [Reactive] public ITweet Tweet { get; set; }
 
         [Reactive] public bool Favorited { get; set; }
+        [Reactive] public int FavoriteCount { get; set; }
 
         public ReactiveCommand FavoriteCommand { get; }
 
@@ -22,9 +23,15 @@ namespace XamTweet.ViewModel
         {
             FavoriteCommand = ReactiveCommand.CreateFromTask(async () =>
             {
-                await Tweet.FavoriteAsync();
-                Favorited = true;
-                var test = Tweet.Favorited;
+                if (Tweet.Favorited)
+                    await Tweet.UnFavoriteAsync();
+                else
+                    await Tweet.FavoriteAsync();
+
+                Favorited = Tweet.Favorited;
+                FavoriteCount = Tweet.Favorited ?
+                    FavoriteCount = Tweet.FavoriteCount + 1 :
+                    FavoriteCount = Tweet.FavoriteCount;
 
                 return Unit.Default;
             });
@@ -34,6 +41,7 @@ namespace XamTweet.ViewModel
                 .Subscribe(tweet =>
                 {
                     Favorited = tweet.Favorited;
+                    FavoriteCount = tweet.FavoriteCount;
                 });
         }
     }
