@@ -3,8 +3,10 @@ using Splat;
 using XamTweet.Contracts;
 using XamTweet.Forms.Services;
 using XamTweet.Forms.Views;
+using XamTweet.Forms.Views.TweetDetail;
 using XamTweet.Services;
 using XamTweet.ViewModel;
+using XamTweet.ViewModel.TweetDetail;
 
 namespace XamTweet.Forms
 {
@@ -30,6 +32,7 @@ namespace XamTweet.Forms
             Locator.CurrentMutable.Register(() => new SearchView(), typeof(IViewFor<SearchViewModel>));
             Locator.CurrentMutable.Register(() => new NotificationsView(), typeof(IViewFor<NotificationsViewModel>));
             Locator.CurrentMutable.Register(() => new MessagesView(), typeof(IViewFor<MessagesViewModel>));
+            Locator.CurrentMutable.Register(() => new TweetDetailView(), typeof(IViewFor<TweetDetailViewModel>));
         }
 
         public void MainView()
