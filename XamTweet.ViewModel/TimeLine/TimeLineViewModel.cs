@@ -1,11 +1,13 @@
 ﻿using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using Splat;
+using System;
 using System.Collections.Generic;
 using System.Reactive;
 using System.Reactive.Linq;
 using Tweetinvi.Models;
 using XamTweet.Contracts;
+using XamTweet.ViewModel.TweetDetail;
 
 namespace XamTweet.ViewModel
 {
@@ -15,6 +17,8 @@ namespace XamTweet.ViewModel
 
         public extern ITwitterCredentials Credentials { [ObservableAsProperty] get; }
         public extern IEnumerable<ITweet> Timeline { [ObservableAsProperty] get; }
+
+        [Reactive] public ITweet SelectedTweet { get; set; }
 
         public ReactiveCommand<Unit, ITwitterCredentials> LoginCommand { get; }
         public ReactiveCommand<Unit, IEnumerable<ITweet>> TimelineCommand { get; }
@@ -32,6 +36,14 @@ namespace XamTweet.ViewModel
             this.WhenAnyValue(x => x.Credentials).Where(x => x != null)
                 .Select(x => Unit.Default)
                 .InvokeCommand(TimelineCommand);
+
+            this.WhenAnyValue(x => x.SelectedTweet).Where(x => x != null)
+                .ObserveOn(RxApp.MainThreadScheduler)
+                .Subscribe(tweet =>
+                {
+                    _twitterService.SetSelected(tweet);
+                    Navigator.Push<TweetDetailViewModel>();
+                });
         }
     }
 }
