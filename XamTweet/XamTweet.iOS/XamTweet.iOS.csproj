@@ -171,4 +171,49 @@
   <ItemGroup>
     <BundleResource Include="Resources\Menu%403x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Like.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Like%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Like%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LikeEmpty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LikeEmpty%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LikeEmpty%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Reply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Reply%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Reply%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Retweet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Retweet%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Retweet%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Share%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Share%403x.png" />
+  </ItemGroup>
 </Project>
