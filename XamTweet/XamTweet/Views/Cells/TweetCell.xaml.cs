@@ -21,6 +21,8 @@ namespace XamTweet.Forms.Views
                 disposables(this.OneWayBind(ViewModel, vm => vm.Favorited, v => v.Like.Source,
                     arg => arg ? ImageSource.FromFile("Like.png") : ImageSource.FromFile("LikeEmpty.png")));
                 disposables(this.OneWayBind(ViewModel, vm => vm.FavoriteCount, v => v.FavoritesCount.Text));
+                disposables(this.OneWayBind(ViewModel, vm => vm.Replies, v => v.ReplyCount.Text));
+                disposables(this.OneWayBind(ViewModel, vm => vm.Retweets, v => v.RetweetCount.Text));
 
                 //disposables(this.OneWayBind(ViewModel, vm => vm.Tweet.Favorited, v => v.TapFavorite.CommandParameter));
 

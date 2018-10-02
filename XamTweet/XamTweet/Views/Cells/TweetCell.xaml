@@ -24,13 +24,32 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button x:Name="Reply"
-                        HorizontalOptions="Start"
-                        Text="C" />
-                <Button x:Name="Retweet"
-                        Grid.Column="1"
-                        HorizontalOptions="Start"
-                        Text="R" />
+                <StackLayout Orientation="Horizontal">
+                    <chachedImage:CachedImage x:Name="Reply"
+                                              HeightRequest="20"
+                                              HorizontalOptions="Start"
+                                              Source="Reply"
+                                              VerticalOptions="Center"
+                                              WidthRequest="20">
+                        <chachedImage:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapReply" />
+                        </chachedImage:CachedImage.GestureRecognizers>
+                    </chachedImage:CachedImage>
+                    <Label x:Name="ReplyCount" VerticalTextAlignment="Center" />
+                </StackLayout>
+                <StackLayout Grid.Column="1" Orientation="Horizontal">
+                    <chachedImage:CachedImage x:Name="Retweet"
+                                              HeightRequest="20"
+                                              HorizontalOptions="Start"
+                                              Source="Retweet"
+                                              VerticalOptions="Center"
+                                              WidthRequest="20">
+                        <chachedImage:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapRetweet" />
+                        </chachedImage:CachedImage.GestureRecognizers>
+                    </chachedImage:CachedImage>
+                    <Label x:Name="RetweetCount" VerticalTextAlignment="Center" />
+                </StackLayout>
                 <StackLayout Grid.Column="2" Orientation="Horizontal">
                     <chachedImage:CachedImage x:Name="Like"
                                               HeightRequest="20"
@@ -43,10 +62,17 @@
                     </chachedImage:CachedImage>
                     <Label x:Name="FavoritesCount" VerticalTextAlignment="Center" />
                 </StackLayout>
-                <Button x:Name="Share"
-                        Grid.Column="3"
-                        HorizontalOptions="Start"
-                        Text="S" />
+                <chachedImage:CachedImage x:Name="Share"
+                                          Grid.Column="3"
+                                          HeightRequest="20"
+                                          HorizontalOptions="Start"
+                                          Source="Share"
+                                          VerticalOptions="Center"
+                                          WidthRequest="20">
+                    <chachedImage:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapShare" />
+                    </chachedImage:CachedImage.GestureRecognizers>
+                </chachedImage:CachedImage>
             </Grid>
         </StackLayout>
 
