@@ -17,6 +17,8 @@ namespace XamTweet.ViewModel
         [Reactive] public ITweet Tweet { get; set; }
         [Reactive] public bool Favorited { get; set; }
         [Reactive] public int FavoriteCount { get; set; }
+        [Reactive] public int Retweets { get; set; }
+        [Reactive] public int? Replies { get; set; }
 
         public ReactiveCommand FavoriteCommand { get; }
 
@@ -42,7 +44,7 @@ namespace XamTweet.ViewModel
             });
 
             this.WhenAnyValue(x => x.Tweet).Where(x => x != null)
-                .ObserveOn(RxApp.TaskpoolScheduler)
+                .ObserveOn(RxApp.MainThreadScheduler)
                 .Subscribe(ConfigureData);
         }
 
@@ -53,6 +55,8 @@ namespace XamTweet.ViewModel
             Tweet = x;
             Favorited = x.Favorited;
             FavoriteCount = x.FavoriteCount;
+            Replies = x.ReplyCount;
+            Retweets = x.RetweetCount;
         }
     }
 }
