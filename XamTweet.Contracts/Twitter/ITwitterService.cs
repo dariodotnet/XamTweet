@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DynamicData;
+using System;
 using Tweetinvi.Models;
 
 namespace XamTweet.Contracts
 {
     public interface ITwitterService
     {
-        List<ITweet> Tweets { get; }
+        SourceList<ITweet> Tweets { get; }
 
-        IObservable<ITwitterCredentials> Login();
-        IObservable<IEnumerable<ITweet>> GetTimeline();
         IObservable<ITweet> PublishTweet(string tweet);
         IObservable<ITweet> UpdateTweet(long id);
 
