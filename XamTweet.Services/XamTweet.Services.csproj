@@ -5,20 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Reactive" Version="4.0.0" />
     <PackageReference Include="TweetinviAPI" Version="4.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\XamTweet.Base\XamTweet.Base.csproj" />
     <ProjectReference Include="..\XamTweet.Contracts\XamTweet.Contracts.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Reactive.Core">
-      <HintPath>..\..\..\Users\dario\.nuget\packages\system.reactive.core\3.1.1\lib\netstandard1.3\System.Reactive.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Linq">
-      <HintPath>..\..\..\Users\dario\.nuget\packages\system.reactive.linq\3.1.1\lib\netstandard1.3\System.Reactive.Linq.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

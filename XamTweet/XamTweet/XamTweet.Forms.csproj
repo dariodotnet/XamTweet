@@ -6,17 +6,22 @@
 
   <ItemGroup>
     <PackageReference Include="I18NPortable" Version="0.6.0" />
-    <PackageReference Include="LiveXAML" Version="2.1.36" />
-    <PackageReference Include="ReactiveUI.XamForms" Version="8.3.1" />
+    <PackageReference Include="LiveXAML" Version="2.1.59" />
     <PackageReference Include="TweetinviAPI" Version="4.0.0" />
-    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\XamTweet.Contracts\XamTweet.Contracts.csproj" />
     <ProjectReference Include="..\..\XamTweet.Services\XamTweet.Services.csproj" />
     <ProjectReference Include="..\..\XamTweet.ViewModel\XamTweet.ViewModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ReactiveUI.XamForms">
+      <HintPath>C:\Users\dario\.nuget\packages\reactiveui.xamforms\9.8.15\lib\netstandard2.0\ReactiveUI.XamForms.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
