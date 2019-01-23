@@ -2,6 +2,7 @@
 {
     using Contracts;
     using DynamicData;
+    using DynamicData.Binding;
     using Splat;
     using System;
     using System.Collections.ObjectModel;
@@ -19,6 +20,7 @@
 
             _twitterService.Tweets.Connect()
                 .Transform(t => new TweetViewModel { Tweet = t })
+                .Sort(SortExpressionComparer<TweetViewModel>.Descending(c => c.Tweet.CreatedAt))
                 .Bind(out timeLine)
                 .DisposeMany().Subscribe();
         }
