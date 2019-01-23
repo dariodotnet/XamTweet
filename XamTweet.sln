@@ -27,6 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamTweet.UseCases", "XamTwe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamTweet.Base", "XamTweet.Base\XamTweet.Base.csproj", "{C333BDC7-A600-4D25-AF5A-B6BCDD23DFA3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D934BAFC-B9F3-453D-9CAD-6BF6BE7EF8C6}"
+	ProjectSection(SolutionItems) = preProject
+		Keys.txt = Keys.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

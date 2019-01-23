@@ -92,6 +92,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LinkerPreserve.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -143,6 +144,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="akavache">
+      <Version>6.2.3</Version>
+    </PackageReference>
     <PackageReference Include="ReactiveUI.XamForms">
       <Version>9.8.15</Version>
     </PackageReference>

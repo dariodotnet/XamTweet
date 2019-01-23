@@ -89,6 +89,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="LinkerPreserve.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -147,6 +148,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="akavache">
+      <Version>6.2.3</Version>
+    </PackageReference>
     <PackageReference Include="ReactiveUI.XamForms">
       <Version>9.8.15</Version>
     </PackageReference>
