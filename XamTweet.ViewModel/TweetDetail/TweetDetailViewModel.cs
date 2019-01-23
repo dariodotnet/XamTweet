@@ -1,15 +1,14 @@
-﻿using ReactiveUI;
-using ReactiveUI.Fody.Helpers;
-using Splat;
-using System;
-using System.Linq;
-using System.Reactive;
-using System.Reactive.Linq;
-using Tweetinvi.Models;
-using XamTweet.Contracts;
-
-namespace XamTweet.ViewModel.TweetDetail
+﻿namespace XamTweet.ViewModel.TweetDetail
 {
+    using Contracts;
+    using ReactiveUI;
+    using ReactiveUI.Fody.Helpers;
+    using Splat;
+    using System;
+    using System.Reactive;
+    using System.Reactive.Linq;
+    using Tweetinvi.Models;
+
     public class TweetDetailViewModel : NavigationViewModel
     {
         private readonly ITwitterService _twitterService;
@@ -24,8 +23,6 @@ namespace XamTweet.ViewModel.TweetDetail
         public TweetDetailViewModel(ITwitterService twitterService = null)
         {
             _twitterService = twitterService ?? Locator.Current.GetService<ITwitterService>();
-
-            Tweet = _twitterService.Tweets.LastOrDefault();
 
             FavoriteCommand = ReactiveCommand.CreateFromTask(async () =>
             {
