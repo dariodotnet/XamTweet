@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<rxui:ReactiveViewCell x:Class="XamTweet.Forms.Views.TweetCell"
+<rxui:ReactiveViewCell x:Class="XamTweet.Forms.Views.Cells.TweetCell"
                        xmlns="http://xamarin.com/schemas/2014/forms"
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                        xmlns:chachedImage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
@@ -28,7 +28,7 @@
                     <chachedImage:CachedImage x:Name="Reply"
                                               HeightRequest="20"
                                               HorizontalOptions="Start"
-                                              Source="Reply"
+                                              Source="Reply.png"
                                               VerticalOptions="Center"
                                               WidthRequest="20">
                         <chachedImage:CachedImage.GestureRecognizers>
@@ -41,7 +41,7 @@
                     <chachedImage:CachedImage x:Name="Retweet"
                                               HeightRequest="20"
                                               HorizontalOptions="Start"
-                                              Source="Retweet"
+                                              Source="Retweet.png"
                                               VerticalOptions="Center"
                                               WidthRequest="20">
                         <chachedImage:CachedImage.GestureRecognizers>
@@ -66,7 +66,7 @@
                                           Grid.Column="3"
                                           HeightRequest="20"
                                           HorizontalOptions="Start"
-                                          Source="Share"
+                                          Source="Share.png"
                                           VerticalOptions="Center"
                                           WidthRequest="20">
                     <chachedImage:CachedImage.GestureRecognizers>
