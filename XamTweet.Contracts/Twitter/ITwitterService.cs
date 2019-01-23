@@ -1,12 +1,12 @@
-﻿using DynamicData;
-using System;
-using Tweetinvi.Models;
-
-namespace XamTweet.Contracts
+﻿namespace XamTweet.Contracts
 {
+    using DynamicData;
+    using System;
+    using Tweetinvi.Models;
+
     public interface ITwitterService
     {
-        SourceList<ITweet> Tweets { get; }
+        SourceList<StoredTweet> Tweets { get; }
 
         IObservable<ITweet> PublishTweet(string tweet);
         IObservable<ITweet> UpdateTweet(long id);
