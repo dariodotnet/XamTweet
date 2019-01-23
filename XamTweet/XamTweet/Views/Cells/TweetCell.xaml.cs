@@ -1,6 +1,5 @@
 ﻿using ReactiveUI;
 using System;
-using System.Reactive.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,15 +27,6 @@ namespace XamTweet.Forms.Views
 
                 disposables(this.BindCommand(ViewModel, vm => vm.FavoriteCommand, v => v.TapFavorite));
             });
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            Observable.Interval(TimeSpan.FromSeconds(5))
-                .ObserveOn(RxApp.TaskpoolScheduler)
-                .Select(x => ViewModel.Tweet.Id)
-                .InvokeCommand(ViewModel.UpdateTweetCommand);
         }
     }
 }
