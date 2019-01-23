@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Reactive.Linq;
 using Tweetinvi;
 using Tweetinvi.Models;
+using XamTweet.Base;
 using XamTweet.Contracts;
 
 namespace XamTweet.Services
@@ -17,10 +18,8 @@ namespace XamTweet.Services
 
         public IObservable<ITwitterCredentials> Login()
         {
-            return Observable.Return(Auth.SetUserCredentials("wq84QNPdAsF7P88DPbvAhNZa1",
-                "xVtP7QRl8YqpTBAmecoSOsi1o0IvsleybdNQvs6mxCtJp08pOZ",
-                "184009490-e7veAUSvHbRIQ4xo52TGSBMRabSi1iq5ziiue4ZE",
-                "x1YKaW6BLWhGQdwONee8HihbHaPgIJ4q1aRjEHj454At7"));
+            return Observable.Return(Auth.SetUserCredentials(AppKeys.ConsumerKey, AppKeys.ConsumerSecret,
+                AppKeys.UserAccessToken, AppKeys.UserAccessSecret));
         }
 
         public IObservable<IEnumerable<ITweet>> GetTimeline()
