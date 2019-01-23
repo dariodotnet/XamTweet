@@ -1,30 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Reactive.Linq;
-using Tweetinvi;
-using Tweetinvi.Models;
-using XamTweet.Base;
-using XamTweet.Contracts;
-
-namespace XamTweet.Services
+﻿namespace XamTweet.Services
 {
+    using Base;
+    using Contracts;
+    using DynamicData;
+    using System;
+    using System.Diagnostics;
+    using System.Reactive.Linq;
+    using System.Reactive.Subjects;
+    using Tweetinvi;
+    using Tweetinvi.Models;
+
     public class TwitterService : ITwitterService
     {
-        //Implementar listado de ITweets para navegar a la profundidad necesaria del stack
+        private readonly Subject<ITwitterCredentials> credentials = new Subject<ITwitterCredentials>();
 
-        //public ITweet Tweet { get; private set; }
-        public List<ITweet> Tweets { get; private set; }
+        public SourceList<ITweet> Tweets { get; }
 
-        public IObservable<ITwitterCredentials> Login()
+        public TwitterService()
         {
-            return Observable.Return(Auth.SetUserCredentials(AppKeys.ConsumerKey, AppKeys.ConsumerSecret,
+            Tweets = new SourceList<ITweet>();
+
+            credentials.Subscribe(c => GetTimeLine());
+
+            Login();
+        }
+
+        private void Login()
+        {
+            credentials.OnNext(Auth.SetUserCredentials(AppKeys.ConsumerKey, AppKeys.ConsumerSecret,
                 AppKeys.UserAccessToken, AppKeys.UserAccessSecret));
         }
 
-        public IObservable<IEnumerable<ITweet>> GetTimeline()
+        private void GetTimeLine()
         {
-            return Observable.Return(Timeline.GetHomeTimeline());
+            Tweets.AddRange(Timeline.GetHomeTimeline());
         }
 
         public IObservable<ITweet> PublishTweet(string tweet)
@@ -36,14 +45,12 @@ namespace XamTweet.Services
         public IObservable<ITweet> UpdateTweet(long id)
         {
             Debug.WriteLine($"Pidiendo informacion sobre el tweet: {id} a las {DateTime.Now}");
-            return Observable.Return(Tweetinvi.Tweet.GetTweet(id));
+            return Observable.Return(Tweet.GetTweet(id));
         }
 
         public void SetSelected(ITweet tweet)
         {
-            if (Tweets == null)
-                Tweets = new List<ITweet>();
-            Tweets.Add(tweet);
+            //Tweets.Add(tweet);
         }
     }
 }
