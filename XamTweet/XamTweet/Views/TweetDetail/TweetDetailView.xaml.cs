@@ -1,11 +1,11 @@
-﻿using System;
-using ReactiveUI;
+﻿using ReactiveUI;
 using ReactiveUI.XamForms;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamTweet.ViewModel.TweetDetail;
 
-namespace XamTweet.Forms.Views.TweetDetail
+namespace XamTweet.Forms.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TweetDetailView : ReactiveContentPage<TweetDetailViewModel>
