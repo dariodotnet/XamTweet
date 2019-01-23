@@ -7,7 +7,6 @@
     using ViewModel;
     using ViewModel.TweetDetail;
     using Views;
-    using Views.TweetDetail;
     using XamTweet.Services;
 
     public class AppBootstrap
