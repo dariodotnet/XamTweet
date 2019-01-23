@@ -1,11 +1,13 @@
-﻿namespace XamTweet.Services
+﻿using XamTweet.Contracts;
+
+namespace XamTweet.Services
 {
     using Akavache;
     using System;
     using System.Collections.Generic;
     using System.Reactive.Linq;
 
-    public class StorageService
+    public class StorageService : IStorageService
     {
         private readonly IBlobCache blob;
 
@@ -31,5 +33,7 @@
 
         public IObservable<T> InsertObject<T>(string key, T data, DateTimeOffset? absoluteExpiration = null) =>
             blob.InsertObject(key, data, absoluteExpiration).SelectMany(x => GetObject<T>(key));
+
+        public IObservable<IEnumerable<T>> GetAllObjects<T>() => blob.GetAllObjects<T>();
     }
 }
