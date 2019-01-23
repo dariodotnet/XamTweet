@@ -20,7 +20,7 @@ namespace XamTweet.ViewModel
         [Reactive] public int Retweets { get; set; }
         [Reactive] public int? Replies { get; set; }
 
-        public ReactiveCommand FavoriteCommand { get; }
+        public ReactiveCommand<Unit, Unit> FavoriteCommand { get; }
 
         public ReactiveCommand<long, ITweet> UpdateTweetCommand { get; }
 
