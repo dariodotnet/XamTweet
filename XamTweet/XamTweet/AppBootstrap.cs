@@ -1,15 +1,15 @@
-﻿using ReactiveUI;
-using Splat;
-using XamTweet.Contracts;
-using XamTweet.Forms.Services;
-using XamTweet.Forms.Views;
-using XamTweet.Forms.Views.TweetDetail;
-using XamTweet.Services;
-using XamTweet.ViewModel;
-using XamTweet.ViewModel.TweetDetail;
-
-namespace XamTweet.Forms
+﻿namespace XamTweet.Forms
 {
+    using Contracts;
+    using ReactiveUI;
+    using Services;
+    using Splat;
+    using ViewModel;
+    using ViewModel.TweetDetail;
+    using Views;
+    using Views.TweetDetail;
+    using XamTweet.Services;
+
     public class AppBootstrap
     {
         public AppBootstrap()
@@ -22,6 +22,7 @@ namespace XamTweet.Forms
         {
             Locator.CurrentMutable.RegisterLazySingleton(() => new NavigationService(), typeof(INavigationService));
             Locator.CurrentMutable.RegisterLazySingleton(() => new TwitterService(), typeof(ITwitterService));
+            Locator.CurrentMutable.RegisterLazySingleton(() => new StorageService(), typeof(IStorageService));
         }
 
         private void InitViews()
