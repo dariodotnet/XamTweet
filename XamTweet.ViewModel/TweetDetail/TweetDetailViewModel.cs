@@ -19,7 +19,7 @@ namespace XamTweet.ViewModel.TweetDetail
         [Reactive] public bool Favorited { get; set; }
         [Reactive] public int FavoriteCount { get; set; }
 
-        public ReactiveCommand FavoriteCommand { get; }
+        public ReactiveCommand<Unit, Unit> FavoriteCommand { get; }
 
         public TweetDetailViewModel(ITwitterService twitterService = null)
         {
