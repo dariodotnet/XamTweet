@@ -10,4 +10,8 @@
     <PackageReference Include="TweetinviAPI" Version="4.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\XamTweet.Base\XamTweet.Base.csproj" />
+  </ItemGroup>
+
 </Project>
