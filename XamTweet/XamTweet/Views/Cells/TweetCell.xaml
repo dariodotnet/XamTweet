@@ -2,7 +2,7 @@
 <rxui:ReactiveViewCell x:Class="XamTweet.Forms.Views.Cells.TweetCell"
                        xmlns="http://xamarin.com/schemas/2014/forms"
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                       xmlns:chachedImage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                       xmlns:controls="clr-namespace:XamTweet.Forms.Views.Controls;assembly=XamTweet.Forms"
                        xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
                        xmlns:vm="clr-namespace:XamTweet.ViewModel;assembly=XamTweet.ViewModel"
                        x:TypeArguments="vm:TweetViewModel">
@@ -11,10 +11,11 @@
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <chachedImage:CachedImage x:Name="TweetUserImage"
-                                  HeightRequest="60"
-                                  VerticalOptions="Start"
-                                  WidthRequest="60" />
+        <controls:ContactImage x:Name="TweetUserImage"
+                               Contact="Default"
+                               HeightRequest="60"
+                               VerticalOptions="Start"
+                               WidthRequest="60" />
         <StackLayout Grid.Column="1">
             <Label x:Name="MainText" />
             <Grid>
@@ -25,54 +26,39 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <StackLayout Orientation="Horizontal">
-                    <chachedImage:CachedImage x:Name="Reply"
-                                              HeightRequest="20"
-                                              HorizontalOptions="Start"
-                                              Source="Reply.png"
-                                              VerticalOptions="Center"
-                                              WidthRequest="20">
-                        <chachedImage:CachedImage.GestureRecognizers>
-                            <TapGestureRecognizer x:Name="TapReply" />
-                        </chachedImage:CachedImage.GestureRecognizers>
-                    </chachedImage:CachedImage>
+                    <controls:CachedImageControl x:Name="Reply"
+                                                 HeightRequest="20"
+                                                 HorizontalOptions="Start"
+                                                 Resource="Reply"
+                                                 VerticalOptions="Center"
+                                                 WidthRequest="20" />
                     <Label x:Name="ReplyCount" VerticalTextAlignment="Center" />
                 </StackLayout>
                 <StackLayout Grid.Column="1" Orientation="Horizontal">
-                    <chachedImage:CachedImage x:Name="Retweet"
-                                              HeightRequest="20"
-                                              HorizontalOptions="Start"
-                                              Source="Retweet.png"
-                                              VerticalOptions="Center"
-                                              WidthRequest="20">
-                        <chachedImage:CachedImage.GestureRecognizers>
-                            <TapGestureRecognizer x:Name="TapRetweet" />
-                        </chachedImage:CachedImage.GestureRecognizers>
-                    </chachedImage:CachedImage>
+                    <controls:CachedImageControl x:Name="Retweet"
+                                                 HeightRequest="20"
+                                                 HorizontalOptions="Start"
+                                                 Resource="Retweet"
+                                                 VerticalOptions="Center"
+                                                 WidthRequest="20" />
                     <Label x:Name="RetweetCount" VerticalTextAlignment="Center" />
                 </StackLayout>
                 <StackLayout Grid.Column="2" Orientation="Horizontal">
-                    <chachedImage:CachedImage x:Name="Like"
-                                              HeightRequest="20"
-                                              HorizontalOptions="Start"
-                                              VerticalOptions="Center"
-                                              WidthRequest="20">
-                        <chachedImage:CachedImage.GestureRecognizers>
-                            <TapGestureRecognizer x:Name="TapFavorite" />
-                        </chachedImage:CachedImage.GestureRecognizers>
-                    </chachedImage:CachedImage>
+                    <controls:CachedImageControl x:Name="Like"
+                                                 HeightRequest="20"
+                                                 HorizontalOptions="Start"
+                                                 Resource="Like"
+                                                 VerticalOptions="Center"
+                                                 WidthRequest="20" />
                     <Label x:Name="FavoritesCount" VerticalTextAlignment="Center" />
                 </StackLayout>
-                <chachedImage:CachedImage x:Name="Share"
-                                          Grid.Column="3"
-                                          HeightRequest="20"
-                                          HorizontalOptions="Start"
-                                          Source="Share.png"
-                                          VerticalOptions="Center"
-                                          WidthRequest="20">
-                    <chachedImage:CachedImage.GestureRecognizers>
-                        <TapGestureRecognizer x:Name="TapShare" />
-                    </chachedImage:CachedImage.GestureRecognizers>
-                </chachedImage:CachedImage>
+                <controls:CachedImageControl x:Name="Share"
+                                             Grid.Column="3"
+                                             HeightRequest="20"
+                                             HorizontalOptions="Start"
+                                             Resource="Share"
+                                             VerticalOptions="Center"
+                                             WidthRequest="20" />
             </Grid>
         </StackLayout>
 
