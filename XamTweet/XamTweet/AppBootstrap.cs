@@ -22,6 +22,7 @@
             Locator.CurrentMutable.RegisterLazySingleton(() => new NavigationService(), typeof(INavigationService));
             Locator.CurrentMutable.RegisterLazySingleton(() => new TwitterService(), typeof(ITwitterService));
             Locator.CurrentMutable.RegisterLazySingleton(() => new StorageService(), typeof(IStorageService));
+            Locator.CurrentMutable.RegisterLazySingleton(() => new ImageCacheService(), typeof(IImageCacheService));
         }
 
         private void InitViews()
