@@ -5,8 +5,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Images\DefaultUser.png" />
+    <None Remove="Resources\Images\Like.png" />
+    <None Remove="Resources\Images\LikeEmpty.png" />
+    <None Remove="Resources\Images\Reply.png" />
+    <None Remove="Resources\Images\Retweet.png" />
+    <None Remove="Resources\Images\Share.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Images\DefaultUser.png" />
+    <EmbeddedResource Include="Resources\Images\Like.png" />
+    <EmbeddedResource Include="Resources\Images\LikeEmpty.png" />
+    <EmbeddedResource Include="Resources\Images\Reply.png" />
+    <EmbeddedResource Include="Resources\Images\Retweet.png" />
+    <EmbeddedResource Include="Resources\Images\Share.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="I18NPortable" Version="0.6.0" />
     <PackageReference Include="LiveXAML" Version="2.1.59" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.0" />
     <PackageReference Include="TweetinviAPI" Version="4.0.0" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
